@@ -1,5 +1,9 @@
 # PipeException
 
+<p align="center">
+  <img src="Logo.png" alt="PipeException Logo" width="128" />
+</p>
+
 [![NuGet](https://img.shields.io/nuget/v/PipeException.svg)](https://www.nuget.org/packages/PipeException/)
 [![CI](https://github.com/phmatray/PipeException/actions/workflows/ci.yml/badge.svg)](https://github.com/phmatray/PipeException/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)

@@ -11,6 +11,7 @@
     <PackageTags>validation;guard;guard-clauses;fluent;pipe;operator-overloading;dotnet</PackageTags>
 
     <!-- Package metadata -->
+    <PackageIcon>Logo.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/phmatray/PipeException</PackageProjectUrl>
@@ -51,6 +52,7 @@
 
   <!-- Package assets -->
   <ItemGroup>
+    <None Include="..\Logo.png" Pack="true" PackagePath="\" />
     <None Include="..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 
