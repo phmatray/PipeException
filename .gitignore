@@ -1,0 +1,30 @@
+# Build results
+bin/
+obj/
+/artifacts/
+
+# NuGet
+/packages/
+*.nupkg
+*.snupkg
+
+# IDE
+.idea/
+.vs/
+*.user
+*.suo
+*.DotSettings.user
+riderModule.iml
+/_ReSharper.Caches/
+
+# Nuke
+.nuke/temp/
+
+# Test results
+TestResults/
+coverage/
+*.trx
+
+# OS
+.DS_Store
+Thumbs.db

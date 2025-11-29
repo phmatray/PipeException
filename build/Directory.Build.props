@@ -1,0 +1,3 @@
+<Project>
+  <!-- Isolate build project from solution's Directory.Build.props -->
+</Project>

@@ -1,0 +1,57 @@
+root = true
+
+[*]
+indent_style = space
+indent_size = 4
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.{cs,csx}]
+# Meziantou.Analyzer rules - Key rules set to warning for strict mode
+dotnet_diagnostic.MA0001.severity = warning
+dotnet_diagnostic.MA0002.severity = warning
+dotnet_diagnostic.MA0003.severity = warning
+dotnet_diagnostic.MA0004.severity = warning
+dotnet_diagnostic.MA0006.severity = warning
+dotnet_diagnostic.MA0011.severity = warning
+dotnet_diagnostic.MA0015.severity = warning
+dotnet_diagnostic.MA0036.severity = warning
+dotnet_diagnostic.MA0038.severity = warning
+dotnet_diagnostic.MA0041.severity = warning
+dotnet_diagnostic.MA0048.severity = warning
+dotnet_diagnostic.MA0051.severity = warning
+dotnet_diagnostic.MA0053.severity = warning
+
+# Relax some rules for test projects
+[PipeException.Tests/**/*.cs]
+dotnet_diagnostic.MA0051.severity = none
+dotnet_diagnostic.MA0053.severity = none
+dotnet_diagnostic.MA0036.severity = none
+dotnet_diagnostic.CA1707.severity = none
+dotnet_diagnostic.MA0074.severity = none
+dotnet_diagnostic.CA1307.severity = none
+
+# Relax some rules for example projects
+[PipeException.Examples/**/*.cs]
+dotnet_diagnostic.MA0051.severity = none
+dotnet_diagnostic.MA0053.severity = none
+dotnet_diagnostic.CA1303.severity = none
+dotnet_diagnostic.MA0074.severity = none
+dotnet_diagnostic.CA1307.severity = none
+
+# Relax rules for build project
+[build/**/*.cs]
+dotnet_diagnostic.MA0051.severity = none
+dotnet_diagnostic.MA0053.severity = none
+dotnet_diagnostic.MA0004.severity = none
+
+[*.{yml,yaml}]
+indent_size = 2
+
+[*.json]
+indent_size = 2
+
+[*.md]
+trim_trailing_whitespace = false

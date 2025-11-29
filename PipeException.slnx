@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="build/_build.csproj" />
+  <Project Path="PipeException.Examples/PipeException.Examples.csproj" />
+  <Project Path="PipeException.Tests/PipeException.Tests.csproj" />
+  <Project Path="PipeException/PipeException.csproj" />
+</Solution>

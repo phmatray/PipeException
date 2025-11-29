@@ -1,0 +1,43 @@
+<Project>
+  <!-- Shared compiler settings -->
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <LangVersion>preview</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <!-- Suppress analyzer rules that conflict with library design patterns -->
+    <!-- CA1034: Nested types - expected with C# extension blocks -->
+    <!-- CA2225: Operator overloads - intentional design for pipe syntax -->
+    <!-- CA1815: Struct equality - ValidationResult doesn't need equality -->
+    <!-- MA0038: Static methods - extension block methods must be instance -->
+    <!-- CA1510-CA1513: Throw helpers - this IS a throw helper library -->
+    <!-- MA0003: Lambda parameters in operators don't need naming -->
+    <!-- MA0015: This library throws exceptions without param names by design -->
+    <!-- CA1062: Validation would be recursive - this IS a validation library -->
+    <!-- CA2208: Exception constructors - intentional simplified API -->
+    <!-- CA1065: Implicit operator throws by design for validation -->
+    <NoWarn>$(NoWarn);CA1034;CA2225;CA1815;MA0038;CA1510;CA1511;CA1512;CA1513;MA0003;MA0015;CA1062;CA2208;CA1065</NoWarn>
+  </PropertyGroup>
+
+  <!-- Deterministic builds for reproducibility -->
+  <PropertyGroup>
+    <Deterministic>true</Deterministic>
+    <ContinuousIntegrationBuild Condition="'$(GITHUB_ACTIONS)' == 'true'">true</ContinuousIntegrationBuild>
+  </PropertyGroup>
+
+  <!-- Code analysis -->
+  <PropertyGroup>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <AnalysisLevel>latest-all</AnalysisLevel>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+  </PropertyGroup>
+
+  <!-- Meziantou.Analyzer for all projects -->
+  <ItemGroup>
+    <PackageReference Include="Meziantou.Analyzer" Version="2.0.182">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+</Project>
