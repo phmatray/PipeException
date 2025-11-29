@@ -2,6 +2,7 @@ using Nuke.Common;
 using Nuke.Common.CI.GitHubActions;
 using Nuke.Common.IO;
 using Nuke.Common.ProjectModel;
+using Nuke.Common.Tooling;
 using Nuke.Common.Tools.DotNet;
 using Nuke.Common.Utilities.Collections;
 using static Nuke.Common.Tools.DotNet.DotNetTasks;
@@ -9,6 +10,7 @@ using static Nuke.Common.Tools.DotNet.DotNetTasks;
 [GitHubActions(
     "ci",
     GitHubActionsImage.UbuntuLatest,
+    AutoGenerate = false,
     OnPushBranches = ["main", "develop", "feature/*"],
     OnPullRequestBranches = ["main", "develop"],
     InvokedTargets = [nameof(Test), nameof(Pack)],
@@ -18,6 +20,7 @@ using static Nuke.Common.Tools.DotNet.DotNetTasks;
 [GitHubActions(
     "publish",
     GitHubActionsImage.UbuntuLatest,
+    AutoGenerate = false,
     OnPushTags = ["v*"],
     InvokedTargets = [nameof(Push)],
     FetchDepth = 0,
@@ -123,5 +126,19 @@ sealed class Build : NukeBuild
                         .SetApiKey(NuGetApiKey)
                         .EnableSkipDuplicate());
                 });
+        });
+
+    AbsolutePath ChangelogFile => RootDirectory / "CHANGELOG.md";
+
+    Target Changelog => _ => _
+        .Executes(() =>
+        {
+            ProcessTasks.StartProcess(
+                    "git-cliff",
+                    arguments: $"-o {ChangelogFile}",
+                    workingDirectory: RootDirectory)
+                .AssertZeroExitCode();
+
+            Serilog.Log.Information("Changelog generated at {Path}", ChangelogFile);
         });
 }
