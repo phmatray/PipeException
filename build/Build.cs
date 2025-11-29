@@ -32,13 +32,13 @@ sealed class Build : NukeBuild
 
     [Parameter("NuGet API key for publishing packages")]
     [Secret]
-    readonly string NuGetApiKey;
+    readonly string? NuGetApiKey;
 
     [Parameter("NuGet source URL")]
     readonly string NuGetSource = "https://api.nuget.org/v3/index.json";
 
     [Solution]
-    readonly Solution Solution;
+    readonly Solution? Solution;
 
     AbsolutePath SourceDirectory => RootDirectory / "PipeException";
     AbsolutePath TestsDirectory => RootDirectory / "PipeException.Tests";
