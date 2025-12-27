@@ -1,7 +1,7 @@
 <Project>
   <!-- MinVer integration for packable projects only -->
   <ItemGroup Condition="'$(IsPackable)' == 'true'">
-    <PackageReference Include="MinVer" Version="6.0.0">
+    <PackageReference Include="MinVer" Version="6.1.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
