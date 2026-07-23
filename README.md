@@ -102,6 +102,17 @@ var notNull = nullableValue.EnsureNotNull();
 ./build.sh pack
 ```
 
+<!-- portfolio-techstack:start -->
+
+## Tech Stack
+
+- **.NET 10**
+- xunit.v3
+- xunit.runner.visualstudio
+- Nuke.Common
+
+<!-- portfolio-techstack:end -->
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
