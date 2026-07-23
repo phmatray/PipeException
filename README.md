@@ -2,6 +2,22 @@
 
 # PipeException
 
+<!-- portfolio-toc:start -->
+
+## Table of Contents
+
+- [Features](#features)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Quick Start](#quick-start)
+- [Building from Source](#building-from-source)
+- [Tech Stack](#tech-stack)
+- [License](#license)
+- [Contributing](#contributing)
+
+<!-- portfolio-toc:end -->
+
+
 <p align="center">
   <img src="Logo.png" alt="PipeException Logo" width="128" />
 </p>
