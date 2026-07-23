@@ -1,3 +1,5 @@
+![PipeException banner](.github/banner.png)
+
 # PipeException
 
 <p align="center">
