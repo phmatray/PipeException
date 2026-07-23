@@ -129,6 +129,14 @@ var notNull = nullableValue.EnsureNotNull();
 
 <!-- portfolio-techstack:end -->
 
+<!-- portfolio-roadmap:start -->
+
+## Roadmap
+
+Planned work and known limitations are tracked in the [open issues](https://github.com/phmatray/PipeException/issues). Contributions toward them are welcome.
+
+<!-- portfolio-roadmap:end -->
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
