@@ -17,6 +17,12 @@ using static Nuke.Common.Tools.DotNet.DotNetTasks;
     FetchDepth = 0,
     EnableGitHubToken = true,
     PublishArtifacts = true)]
+// ⚠ .github/workflows/publish.yml is hand-edited beyond what this attribute generates: it declares
+// permissions.id-token: write and runs NuGet/login to obtain a short-lived key through Trusted
+// Publishing, instead of importing a long-lived NUGET_API_KEY secret. Nuke cannot express that step
+// declaratively, and AutoGenerate = false means nothing overwrites it on its own — but
+// `nuke --generate-configuration GitHubActions_publish --host GitHubActions` would, dropping both.
+// ImportSecrets is kept empty so a regeneration at least stops re-introducing the old secret.
 [GitHubActions(
     "publish",
     GitHubActionsImage.UbuntuLatest,
@@ -24,8 +30,7 @@ using static Nuke.Common.Tools.DotNet.DotNetTasks;
     OnPushTags = ["v*"],
     InvokedTargets = [nameof(Push)],
     FetchDepth = 0,
-    EnableGitHubToken = true,
-    ImportSecrets = [nameof(NuGetApiKey)])]
+    EnableGitHubToken = true)]
 sealed class Build : NukeBuild
 {
     public static int Main() => Execute<Build>(x => x.Compile);
