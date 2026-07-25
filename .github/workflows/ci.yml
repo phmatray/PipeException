@@ -23,9 +23,6 @@ on:
       - develop
       - 'feature/*'
   pull_request:
-    branches:
-      - main
-      - develop
 
 jobs:
   ubuntu-latest:
