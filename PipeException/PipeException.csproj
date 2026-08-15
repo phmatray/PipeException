@@ -40,11 +40,11 @@
 
   <!-- SourceLink package -->
   <ItemGroup>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.301">
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.400">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
-    <PackageReference Update="Meziantou.Analyzer" Version="3.0.138">
+    <PackageReference Update="Meziantou.Analyzer" Version="3.0.147">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
